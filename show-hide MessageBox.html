@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Jquery Message Box</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #message-box {
+            background-color: goldenrod;
+            text-align: center;
+            color: white;
+        }
+        
+        #header {
+            height: 20px;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        #content {
+            height: 200px;
+            padding: 10px;
+            display: none;
+        }
+        
+        #close {
+            float: right;
+        }
+        
+        #close:hover {
+            color: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <p>Jquery Show Hide Effekti </p>
+
+    <button id="slideup">Slide Up</button>
+    <button id="slidedown">Slide Down</button>
+    <button id="slidetoggle">Slide Toggle</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#slideup').click(function() {
+                $("p").slideDown("slow");
+            })
+        });
+
+        $(document).ready(function() {
+            $('#slidedown').click(function() {
+                $("p").slideUp(2000);
+            });
+        });
+
+        $(document).ready(function() {
+            $('#slidetoggle').click(function() {
+                $("p").slideToggle(2000);
+            });
+        });
+
+
+
+        // <!--Mesaj Kod Kısmı-->
+
+        $(function() {
+            $("#header").click(function() {
+                $("#content").toggle("slow");
+            });
+
+            $("#close").click(function() {
+                $("#close").toggle(3000);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+    <h3>Message Box App</h3>
+
+    <div id="message-box">
+        <div id="header">
+            <span id="close">X</span> Mesajınız Var
+        </div>
+        <div id="content">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
